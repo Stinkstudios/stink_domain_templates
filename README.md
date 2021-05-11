@@ -1,0 +1,1 @@
+This repo is meant to be used as a submodule in projects started with the [repo_starter](https://github.com/Stinkstudios/repo_starter).  It will exist at the top level and be the source from which different domains within the repo are generated.
