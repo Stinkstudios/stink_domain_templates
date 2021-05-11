@@ -1,0 +1,31 @@
+.m-header
+	position: absolute
+	display: grid
+	justify-content: center
+	padding: 24px 0
+	width: 100%
+	z-index: 2
+
+
+	&__logo
+		svg
+			height: 40px
+			margin: 0 auto
+
+			path
+				fill: var(--content-color)
+
+
+	&__mute
+		text-align: right
+		grid-column: span 1 / end
+
+		svg
+			height: 24px
+
+			path
+				fill: var(--content-color)
+
+	&__splash
+		color: var(--content-color)
+

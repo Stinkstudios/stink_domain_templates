@@ -1,0 +1,5 @@
+export { default as getValueFromHash } from './functions/getValueFromHash'
+export { default as getLinkProps } from './functions/getLinkProps'
+export { default as urlFor } from './functions/urlFor'
+export { default as processSizes } from './functions/processSizes'
+export { default as generateSrcSet } from './functions/generateSrcSet'

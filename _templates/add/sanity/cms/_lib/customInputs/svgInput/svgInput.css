@@ -1,0 +1,16 @@
+.svgPreview {
+	margin-top: 2rem;
+	text-align: center;
+}
+
+.svgPreview svg {
+	width: 66%;
+}
+
+.svgPreview path {
+	fill: black;
+}
+
+.svgInput {
+	padding-right: 1rem;
+}

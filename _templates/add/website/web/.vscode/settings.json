@@ -1,0 +1,6 @@
+{
+	"stylint.alwaysShowStatus": true,
+	"stylint.stylintrcPath": "../.stylintrc",
+	"prettier.configPath": "../.prettierrc",
+	"editor.formatOnSave": true
+}

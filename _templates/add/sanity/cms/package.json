@@ -1,0 +1,51 @@
+{
+	"name": "stinkstudios-sanitystudio",
+	"private": true,
+	"version": "1.0.1",
+	"description": "",
+	"main": "package.json",
+	"author": "Thomas Boulongne <thomas.boulongne@stinkstudios.com>",
+	"license": "UNLICENSED",
+	"scripts": {
+		"start": "node ./setupStudio.js",
+		"check": "sanity check",
+		"build": "node ./setupStudio.js; cp ./_redirects ./dist/_redirects",
+		"preinstall": "which link-module-alias && link-module-alias clean || echo",
+		"preuninstall": "which link-module-alias && link-module-alias clean || echo",
+		"preversion": "which link-module-alias && link-module-alias clean || echo",
+		"postinstall": "link-module-alias",
+		"postuninstall": "link-module-alias",
+		"postversion": "link-module-alias"
+	},
+	"keywords": [
+		"sanity"
+	],
+	"_moduleAliases": {
+		"~": "."
+	},
+	"dependencies": {
+		"@sanity/base": "^2.1.2",
+		"@sanity/cli": "^2.1.0",
+		"@sanity/components": "^2.1.0",
+		"@sanity/core": "^2.1.2",
+		"@sanity/dashboard": "^2.1.0",
+		"@sanity/default-layout": "^2.1.2",
+		"@sanity/default-login": "^2.1.0",
+		"@sanity/desk-tool": "^2.1.2",
+		"@sanity/google-maps-input": "^2.1.2",
+		"@sanity/ui": "^0.32.7",
+		"@sanity/vision": "^2.1.0",
+		"bcp47": "^1.1.2",
+		"generate-unique-id": "^2.0.1",
+		"link-module-alias": "^1.2.0",
+		"lodash.clonedeep": "^4.5.0",
+		"prop-types": "^15.7.2",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1",
+		"react-icons": "^4.1.0",
+		"sanity-plugin-dashboard-widget-document-list": "0.0.11",
+		"sanity-plugin-dashboard-widget-netlify": "^1.0.1",
+		"toml": "^3.0.0"
+	},
+	"devDependencies": {}
+}

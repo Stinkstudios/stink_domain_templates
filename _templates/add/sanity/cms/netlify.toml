@@ -1,0 +1,17 @@
+# Base configuration
+[build]
+	ignore    = "git diff --quiet HEAD^ HEAD ."
+	command   = "echo 'Studio'; npm run build"
+	publish   = "dist/"
+[build.environment]
+	SANITY_STUDIO_API_PROJECT_ID = "twyxjddm"
+	DEPLOY_ENV                   = "production"
+	NODE_ENV                  	 = "production"
+	SANITY_STUDIO_API_DATASET    = "stage"
+	PREVIEW                      = "true"
+	DATAINTERFACE_TYPE			 = "sanity"
+	URL                       	 = "https://dev--example.netlify.app"
+[context.local.environment]
+	SANITY_STUDIO_API_DATASET = "stage"
+	DEPLOY_ENV                = "development"
+	NODE_ENV                  = "development"

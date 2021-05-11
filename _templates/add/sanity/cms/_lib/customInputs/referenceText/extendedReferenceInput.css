@@ -1,0 +1,9 @@
+.customInputItem{
+    margin: 10px 0;
+}
+
+.hiddenItem {
+    visibility: hidden;
+    height:0;
+    position:absolute
+}
