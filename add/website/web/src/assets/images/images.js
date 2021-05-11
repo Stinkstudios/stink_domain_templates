@@ -1,3 +1,6 @@
+
+const images = {}
+
 function importAll(requireFunction) {
 	return (ctx => {
 		return ctx.keys().map(key => {
@@ -10,7 +13,7 @@ function getFilePath(path) {
 	return path.split('/')[3].replace(/\.(jpe?g|jpg|png|webp)$/, '')
 }
 
-const images = {}
+
 
 for (const image of importAll(require.context(`./?{format: "webp"}`, false, /^(?!\.\/).*\.(jpe?g|jpg|png|webp)$/))) {
 	const noExtensionPath = getFilePath(image.key)

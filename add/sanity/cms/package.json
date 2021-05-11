@@ -15,7 +15,8 @@
 		"preversion": "which link-module-alias && link-module-alias clean || echo",
 		"postinstall": "link-module-alias",
 		"postuninstall": "link-module-alias",
-		"postversion": "link-module-alias"
+		"postversion": "link-module-alias",
+		"use:hygen": "git submodule add https://github.com/Stinkstudios/stink_sanity_templates _templates && rm -f .gitmodules"
 	},
 	"keywords": [
 		"sanity"
