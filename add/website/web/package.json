@@ -10,7 +10,8 @@
 		"build": "next build",
 		"start": "next start -p 8080",
 		"prod": "npm run build && next export",
-		"test": "node next.config.js"
+		"test": "node next.config.js",
+		"use:hygen": "git submodule add https://github.com/Stinkstudios/stink_web_templates _templates && rm -f .gitmodules"
 	},
 	"dependencies": {
 		"@netlify/functions": "^0.6.0",

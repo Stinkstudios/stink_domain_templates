@@ -5,7 +5,7 @@ import CSS from './home.module.sass'
 
 export const getStaticProps = async () => {
 	const DataInterface = require('~/data')
-	const data = await DataInterface.fetch({type: 'page'})
+	const data = await DataInterface.fetch({type: 'page', args: {name: 'home' }})
 
 	return {
 		props: {

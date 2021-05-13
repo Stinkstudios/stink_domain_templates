@@ -1,3 +1,4 @@
 built.*.js
 built.*.json
 dist/
+node_modules
