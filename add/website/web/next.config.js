@@ -4,16 +4,6 @@ const path = require('path')
 
 let env = {}
 /** CREATE ENV FROM CONFIG FILE */
-/** NETLIFY */
-const toml = require('toml')
-const parsedToml = toml.parse(readFileSync('./netlify.toml'))
-const base = parsedToml.build.environment
-const deployEnv = process.env.DEPLOY_ENV || "development"
-env = (deployEnv !== "development") ?
-			Object.assign(base, parsedToml.context[deployEnv].environment) :
-			base;
-
-console.log(env)
 
 const NextComposeWithPlugins = require('next-compose-plugins')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
