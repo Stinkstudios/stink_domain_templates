@@ -12,7 +12,7 @@ import { CustomDeleteAction } from './customDelete'
 export default function resolveDocumentActions(props) {
 	if (process.env.SANITY_STUDIO_API_DATASET !== 'production') {
 		const defaultActions = [
-			...defaultResolve(props).filter(action => {
+			...defaultResolve(props).filter((action) => {
 				if (props.type.includes('singleton')) {
 					switch (action) {
 						case DeleteAction:
@@ -34,7 +34,7 @@ export default function resolveDocumentActions(props) {
 			// We don't want to be able to publish on the production dataset if it hasn't been published on preview first
 			// If there is no draft, it means that the document is published
 			return [
-				...defaultActions.map(Action => {
+				...defaultActions.map((Action) => {
 					let actionToReturn = Action
 					switch (Action) {
 						case PublishAction:

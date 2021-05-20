@@ -24,7 +24,7 @@ export default class ExtendedReferenceInput extends React.Component {
 		}
 	}
 
-	setInput = input => {
+	setInput = (input) => {
 		this._input = input
 	}
 
@@ -53,7 +53,7 @@ export default class ExtendedReferenceInput extends React.Component {
 				title: this.state.newTitle,
 				content: this.state.newContent
 			})
-			.then(res => {
+			.then((res) => {
 				const referenceInput = this._input._input._input
 				referenceInput.handleChange({
 					_type: 'reference',
@@ -63,7 +63,7 @@ export default class ExtendedReferenceInput extends React.Component {
 					addNewItem: false
 				})
 			})
-			.catch(err => {
+			.catch((err) => {
 				console.log(err) // eslint-disable-line no-console
 			})
 	}
@@ -98,17 +98,17 @@ export default class ExtendedReferenceInput extends React.Component {
 					</h2>
 					<Label className={formItemStyle.customInputItem}>Title</Label>
 					<DefaultTextInput
-						ref={element => (this._newDocLabel = element)}
+						ref={(element) => (this._newDocLabel = element)}
 						value={this.state.newTitle}
 						placeholder="new title"
-						onChange={e => this.handleTyping('newTitle', e.currentTarget.value)}
+						onChange={(e) => this.handleTyping('newTitle', e.currentTarget.value)}
 					></DefaultTextInput>
 					<Label className={formItemStyle.customInputItem}>Content</Label>
 					<DefaultTextArea
-						ref={element => (this._newDocContent = element)}
+						ref={(element) => (this._newDocContent = element)}
 						value={this.state.newContent}
 						placeholder="new content"
-						onChange={e => this.handleTyping('newContent', e.currentTarget.value)}
+						onChange={(e) => this.handleTyping('newContent', e.currentTarget.value)}
 					></DefaultTextArea>
 					<Button
 						className={[formItemStyle.customInputItem, buttonStyle.inverted]}

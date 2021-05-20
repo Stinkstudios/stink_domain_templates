@@ -1,4 +1,4 @@
-import {blocks} from '~/data/sanity/fragments'
+import { blocks } from '~/data/sanity/fragments'
 
 const content = (name = 'content') => `${name}[]{
 	_type == "bullets" => ${blocks.bullets()},

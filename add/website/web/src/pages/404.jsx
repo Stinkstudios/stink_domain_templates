@@ -1,6 +1,6 @@
 import CSS from './home.module.sass'
 
-const _404 = ({ data, i18n, query }) => {
+const _404 = () => {
 	return <div className={`${CSS['p-home']}`}>404</div>
 }
 

@@ -1,4 +1,5 @@
 import FieldSelectorInput from '~/_lib/customInputs/fieldSelectorInput'
+
 export default {
 	name: 'link',
 	title: 'Link Item',

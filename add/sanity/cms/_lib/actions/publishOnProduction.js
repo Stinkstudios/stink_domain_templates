@@ -13,12 +13,12 @@ const types = ['image', 'file']
 
 // We traverse the object or array given as a parameter recursively to get the assets
 // from preview, download them and upload them on the production dataset
-const findAssetInVariable = async variable => {
+const findAssetInVariable = async (variable) => {
 	if (typeof variable === 'object' && !Array.isArray(variable)) {
 		for (const prop in variable) {
 			if (prop === '_type' && types.includes(variable[prop])) {
 				const assetDocument = await client.fetch(`*[_id == "${variable.asset._ref}"][0]`)
-				const buffer = await fetch(assetDocument.url).then(res => {
+				const buffer = await fetch(assetDocument.url).then((res) => {
 					return res.arrayBuffer()
 				})
 				const newAssetDocument = await productionClient.assets.upload(assetDocument._id.split('-')[0], buffer, {
@@ -47,7 +47,7 @@ export function PublishOnProductionAction({ id, type }) {
 
 	// We fetch the current published state on the production dataset
 	React.useEffect(() => {
-		getProductionPublishedState(id, type).then(state => setIsPublished(state))
+		getProductionPublishedState(id, type).then((state) => setIsPublished(state))
 	}, [])
 
 	React.useEffect(() => {
@@ -85,10 +85,10 @@ export function PublishOnProductionAction({ id, type }) {
 						await findAssetInVariable(previewDocument)
 						await productionClient
 							.createOrReplace(previewDocument)
-							.then(res => {
+							.then((res) => {
 								setIsPublished(true)
 							})
-							.catch(err => {
+							.catch((err) => {
 								setPopoverMessage({
 									title: 'Fail',
 									message: err.message.replace('The mutation(s) failed:', '')

@@ -25,8 +25,8 @@ export default {
 			type: 'string'
 		},
 		...projectConfig.i18n.languages
-			.filter(l => l !== projectConfig.i18n.default_language)
-			.map(l => {
+			.filter((l) => l !== projectConfig.i18n.default_language)
+			.map((l) => {
 				return {
 					name: l,
 					title: l,

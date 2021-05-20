@@ -9,7 +9,7 @@ export default {
 		{
 			name: 'svgString',
 			type: 'string',
-			validation: Rule => Rule.required()
+			validation: (Rule) => Rule.required()
 		}
 	],
 	inputComponent: SvgInput

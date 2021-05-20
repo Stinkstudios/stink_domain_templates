@@ -28,7 +28,7 @@ const defaultGetSources = ({ srcsets = null, load }) => {
 	return null
 }
 
-const getSources = options => {
+const getSources = (options) => {
 	const provider = getProvider(options.provider)
 	let sources
 	if (provider.getSources) {

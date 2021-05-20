@@ -16,7 +16,7 @@ export function CustomDeleteAction({ id, type }) {
 	const [label, setLabel] = React.useState(defaultLabel)
 
 	React.useEffect(() => {
-		getProductionPublishedState(id, type).then(state => setIsPublished(state))
+		getProductionPublishedState(id, type).then((state) => setIsPublished(state))
 	}, [])
 
 	React.useEffect(() => {

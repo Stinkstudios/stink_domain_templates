@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import i18nConfig from '~/i18n/config'
 
-const Header = ({ data }) => {
+const Header = () => {
 	const router = useRouter()
 	const routePieces = router.asPath.split('/')
 	if (i18nConfig.locales.includes(routePieces[1])) routePieces.splice(1, 1)
@@ -11,7 +11,6 @@ const Header = ({ data }) => {
 	return (
 		<header className={`${CSS['m-header']}`}>
 			header
-			{/* {t('HEADER_DEFAULT')} */}
 			<Link href={`/en${stripLangQuery}`}>
 				<a href={`/en${stripLangQuery}`}>English</a>
 			</Link>

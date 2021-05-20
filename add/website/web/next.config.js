@@ -1,14 +1,21 @@
-const { readFileSync, writeFileSync } = require('fs')
 const breakpoints = require('./src/global/settings/breakpoints')
 const path = require('path')
 
 let env = {}
+
 /** CREATE ENV FROM CONFIG FILE */
 
 const NextComposeWithPlugins = require('next-compose-plugins')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
 	enabled: process.env.ANALYZE === 'true'
 })
+
+/* ADD IMAGE PROVIDERS AUTOMATICALLY - DO NOT MODIFY */
+let imageProviders = ''
+/* ADD IMAGE PROVIDERS AUTOMATICALLY - HYGEN ANCHOR */
+if (imageProviders !== '') {
+	env.IMAGE_PROVIDERS = imageProviders
+}
 
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin')
 
@@ -25,15 +32,14 @@ const generateSassBreakpoint = () => {
 const webpackCopyPagesToLanguages = require('./src/i18n/webpackCopyPagesToLanguages')
 
 const nextConfig = {
-	// distDir: 'build',
 	env,
-	target: process.env.DEPLOY_ENV==="production" ? 'server' : 'serverless',	
+	target: process.env.DEPLOY_ENV === 'production' ? 'server' : 'serverless',
 	trailingSlashes: true, // For Google App Engine - WIP
 	future: {
 		webpack5: true
 	},
 	pageExtensions: ['jsx'],
-	webpack: config => {
+	webpack: (config) => {
 		webpackCopyPagesToLanguages(config)
 		config.module.rules.push({
 			test: /\.(mp4|webm|mp3)$/,
@@ -56,7 +62,7 @@ const nextConfig = {
 						loader: 'responsive-loader',
 						options: {
 							adapter: require('responsive-loader/sharp'),
-							sizes: breakpoints.map(breakpoint => breakpoint.width),
+							sizes: breakpoints.map((breakpoint) => breakpoint.width),
 							publicPath: `/_next/static/files`,
 							outputPath: 'static/files'
 						}
@@ -67,6 +73,11 @@ const nextConfig = {
 		config.resolve.plugins.push(new DirectoryNamedWebpackPlugin(true))
 		config.resolve.alias['~'] = path.resolve(__dirname, 'src/')
 		config.resolve.alias['^'] = path.join(__dirname, '../')
+		config.plugins.push(
+			new webpack.ProvidePlugin({
+				globalCSS: path.resolve(path.join(__dirname, 'src/global/styles/global.module.sass'))
+			})
+		)
 		return config
 	},
 	sassOptions: {

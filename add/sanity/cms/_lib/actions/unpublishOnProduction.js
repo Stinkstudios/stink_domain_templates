@@ -5,7 +5,7 @@ import CloseIcon from 'part:@sanity/base/close-icon'
 
 const defaultLabel = 'Unpublish on production'
 
-export function UnpublishOnProductionAction({ id, type }) {
+export function UnpublishOnProductionAction({ id }) {
 	const [showConfirm, setShowConfirm] = React.useState(false)
 	const [label, setLabel] = React.useState(defaultLabel)
 	return {

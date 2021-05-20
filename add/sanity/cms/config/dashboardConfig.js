@@ -1,9 +1,9 @@
 export default {
 	widgets: [
 		{ name: 'project-users', layout: { height: 'auto' } },
-		{ 
+		{
 			name: 'structure-menu',
-			layout: { width: 'small'}
+			layout: { width: 'small' }
 		},
 		{
 			name: 'document-list',

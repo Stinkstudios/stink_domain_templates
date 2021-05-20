@@ -35,7 +35,7 @@ export function localizeObject(origObj, regionRefType) {
 	}
 
 	origObj.fields = [
-		...locaObj.fields.filter(f => f.name !== 'regionalized_reference'),
+		...locaObj.fields.filter((f) => f.name !== 'regionalized_reference'),
 		{
 			name: 'regionalized',
 			title: 'Regionalized Content',

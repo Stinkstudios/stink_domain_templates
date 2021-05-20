@@ -63,7 +63,7 @@ const Image = (
 	}, [])
 
 	const hidePlaceholder = () => {
-		return new Promise(resolve => {
+		return new Promise((resolve) => {
 			window.requestIdleCallback(() => {
 				const tl = gsap.timeline({ onComplete: () => resolve() })
 				tl.to(

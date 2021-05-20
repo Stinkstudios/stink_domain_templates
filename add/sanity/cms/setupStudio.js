@@ -3,7 +3,10 @@ const { readFileSync, writeFileSync } = require('fs')
 const path = require('path')
 
 const projectConfig = require('../project.json')
-writeFileSync(path.join(__dirname, 'built.project.js'), `const config = ${JSON.stringify(projectConfig)} \nexport default config`)
+writeFileSync(
+	path.join(__dirname, 'built.project.js'),
+	`const config = ${JSON.stringify(projectConfig)} \nexport default config`
+)
 
 const netlifyConfig = toml.parse(readFileSync('./netlify.toml'))
 const config = projectConfig.environment || {}

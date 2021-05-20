@@ -1,4 +1,4 @@
-import {link} from '~/data/sanity/fragments'
+import { link } from '~/data/sanity/fragments'
 
 const notification = (name = 'notification') => `${name}{
 	heading,

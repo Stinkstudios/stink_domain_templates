@@ -20,7 +20,7 @@ class MousePosition {
 	updateMousePosition(ev) {
 		this.setPosition(ev.clientX, ev.clientY)
 		requestAnimationFrame(() => {
-			this.subscribers.forEach(fn => {
+			this.subscribers.forEach((fn) => {
 				fn({ x: this.x, y: this.y })
 			})
 		})
@@ -29,7 +29,7 @@ class MousePosition {
 	subscribe(callback) {
 		this.subscribers.push(callback)
 		return () => {
-			this.subscribers.filter(cb => cb !== callback)
+			this.subscribers.filter((cb) => cb !== callback)
 		}
 	}
 

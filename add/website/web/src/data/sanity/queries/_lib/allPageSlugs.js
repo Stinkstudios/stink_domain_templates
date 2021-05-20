@@ -1,4 +1,4 @@
-import {slug} from '~/data/sanity/fragments'
+import { slug } from '~/data/sanity/fragments'
 
 const allPageSlugs = `
 *[_type == 'page'] {

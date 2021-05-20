@@ -1,8 +1,8 @@
 export default function importAll(requireFunction) {
-	return (ctx => {
+	return ((ctx) => {
 		const keys = ctx.keys()
 		const values = keys.map(ctx)
-		return values.map(value => {
+		return values.map((value) => {
 			return value.default
 		})
 	})(requireFunction)

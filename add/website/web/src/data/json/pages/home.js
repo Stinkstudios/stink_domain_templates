@@ -8,6 +8,6 @@ const data = {
 		HOME: 'Domicile'
 	}
 }
-const home = args => data[args.language] || data.en
+const home = (args) => data[args.language] || data.en
 
 module.exports = home
