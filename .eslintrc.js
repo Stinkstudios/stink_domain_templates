@@ -9,7 +9,6 @@ module.exports = {
 		'plugin:prettier/recommended',
 		'standard',
 		'prettier',
-		'prettier/react',
 		'plugin:jsx-a11y/recommended'
 	],
 	globals: {

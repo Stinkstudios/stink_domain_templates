@@ -1,6 +1,7 @@
 const breakpoints = require('./src/global/settings/breakpoints')
 const path = require('path')
 
+// eslint-disable-next-line prefer-const
 let env = {}
 
 /** CREATE ENV FROM CONFIG FILE */
@@ -11,6 +12,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 /* ADD IMAGE PROVIDERS AUTOMATICALLY - DO NOT MODIFY */
+// eslint-disable-next-line prefer-const
 let imageProviders = ''
 /* ADD IMAGE PROVIDERS AUTOMATICALLY - HYGEN ANCHOR */
 if (imageProviders !== '') {
@@ -39,7 +41,7 @@ const nextConfig = {
 		webpack5: true
 	},
 	pageExtensions: ['jsx'],
-	webpack: (config) => {
+	webpack: (config, { webpack }) => {
 		webpackCopyPagesToLanguages(config)
 		config.module.rules.push({
 			test: /\.(mp4|webm|mp3)$/,
@@ -87,6 +89,7 @@ const nextConfig = {
 		@use 'sass:list'
 		@import '~rupture-sass/rupture'
 		@import '~/global/styles/settings.sass'
+		@import '~/global/styles/helpers.sass'
 		`
 	}
 }

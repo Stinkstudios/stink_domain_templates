@@ -1,5 +1,4 @@
 import productionClient from './productionClient'
-import client from 'part:@sanity/base/client'
 
 export async function getProductionPublishedState(id, type) {
 	const productionDocument = await productionClient.fetch(`*[_id == "${id}" && _type == "${type}"][0]`)
