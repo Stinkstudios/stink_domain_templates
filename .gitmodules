@@ -1,0 +1,3 @@
+[submodule "add/website/web/_templates"]
+	path = add/website/web/_templates
+	url = https://github.com/Stinkstudios/stink_web_templates
