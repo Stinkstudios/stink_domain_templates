@@ -1,13 +1,8 @@
 const data = {
-	en: {
-		key: 'value',
-		HOME: 'Home'
-	},
-	fr: {
-		key: 'value',
-		HOME: 'Domicile'
-	}
+	key: 'value',
+	HOME: 'Home'
 }
-const home = (args) => data[args.language] || data.en
+
+const home = () => data
 
 module.exports = home
