@@ -8,3 +8,4 @@ after: '	"scripts": {'
 		"<%= directoryName %>:deploy": "cd ./<%= directoryName %> && sanity deploy",
 		"<%= directoryName %>:i": "npm i --prefix ./<%= directoryName %>",
 		"<%= directoryName %>:uninstall": "npm uninstall --prefix ./<%= directoryName %>",
+		"<%= directoryName %>:hygen": "cd ./<%= directoryName %> && hygen",

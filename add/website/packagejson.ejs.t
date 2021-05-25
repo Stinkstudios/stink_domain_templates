@@ -7,3 +7,4 @@ after: '	"scripts": {'
 		"<%= directoryName %>:prod": "cd ./<%= directoryName %> && npm run prod",
 		"<%= directoryName %>:i": "npm i --prefix ./<%= directoryName %>",
 		"<%= directoryName %>:uninstall": "npm uninstall --prefix ./<%= directoryName %>",
+		"<%= directoryName %>:hygen": "cd ./<%= directoryName %> && hygen",
