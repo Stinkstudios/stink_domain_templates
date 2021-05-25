@@ -8,5 +8,10 @@ module.exports = [
 		type: 'input',
 		name: 'sanityProjectID',
 		message: 'What is the ID of the Sanity project?'
+	},
+	{
+		type: 'input',
+		name: 'sanityProjectDataset',
+		message: 'What is the name of the default dataset?'
 	}
 ]

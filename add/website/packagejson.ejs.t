@@ -1,5 +1,6 @@
 ---
-to: 'package.json',
+to: 'package.json'
+inject: true
 after: '	"scripts": {'
 ---
 		"<%= directoryName %>:dev": "cd ./<%= directoryName %> && npm run dev",
