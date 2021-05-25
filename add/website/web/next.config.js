@@ -5,7 +5,6 @@ const path = require('path')
 let env = {}
 
 /** CREATE ENV FROM CONFIG FILE */
-
 const NextComposeWithPlugins = require('next-compose-plugins')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
 	enabled: process.env.ANALYZE === 'true'
