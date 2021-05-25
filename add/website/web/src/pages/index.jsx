@@ -13,7 +13,7 @@ export const getStaticProps = async () => {
 }
 
 const Home = () => {
-	return <div className={`${CSS['p-home']}`}>Home</div>
+	return <div className={`${CSS.home}`}>Home</div>
 }
 
 Home.displayName = 'Home'

@@ -2,6 +2,7 @@ import 'normalize.css'
 import 'focus-visible'
 
 import '~/global/styles/base.sass'
+import '~/global/styles/variables.sass'
 
 /** 3RD PARTY */
 import React from 'react'
