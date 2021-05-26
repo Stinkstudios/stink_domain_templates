@@ -1,5 +1,4 @@
 const json = require('./json/json')
-const sanity = require('./sanity')
 
 class DataInterface {
 	defaults() {
@@ -39,5 +38,5 @@ class DataInterface {
 }
 
 module.exports = new DataInterface({
-	type: process.env.DATAINTERFACE_TYPE || 'json'
+	type: process.env.DEFAULT_DATA_SOURCE || 'json'
 })

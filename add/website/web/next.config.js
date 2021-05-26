@@ -1,10 +1,17 @@
+//eslint-disable-next-line no-used-vars
+const { readFileSync, writeFileSync } = require('fs')
+
 const breakpoints = require('./src/global/settings/breakpoints')
 const path = require('path')
 
+const projectJsonText = readFileSync(path.join(__dirname, '../project.json'), 'utf8')
+const projectConfig = JSON.parse(projectJsonText)
 // eslint-disable-next-line prefer-const
 let env = {}
 
 /** CREATE ENV FROM CONFIG FILE */
+
+
 const NextComposeWithPlugins = require('next-compose-plugins')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
 	enabled: process.env.ANALYZE === 'true'
