@@ -1,6 +1,5 @@
 const config = require('./config')
 const page = require('./pages')
-const general = require('./general')
 
 const jsons = {
 	config,

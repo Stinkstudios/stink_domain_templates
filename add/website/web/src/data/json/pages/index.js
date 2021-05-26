@@ -1,5 +1,4 @@
 const pages = {
-	about: require('./about'),
 	home: require('./home')
 }
 
