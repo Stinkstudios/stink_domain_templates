@@ -10,8 +10,6 @@ const Default = ({ children, data, i18n }) => {
 	return (
 		<div className={`${CSS['l-default']}`} ref={$element}>
 			<Header i18n={i18n} data={data} />
-            <WebGL />
-
 			{children}
 			<Footer i18n={i18n} data={data} />
 		</div>
