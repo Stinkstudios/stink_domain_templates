@@ -1,16 +1,12 @@
 import 'normalize.css'
 import 'focus-visible'
-import '~/global/styles/fonts.sass'
-import '~/global/styles/helpers.sass'
-import '~/global/styles/global.sass'
-import '~/helpers/gsapDirectionalPlugin'
 
-import '~/helpers/wdyr'
+import '~/global/styles/base.sass'
+import '~/global/styles/variables.sass'
 
 /** 3RD PARTY */
-import React, { useLayoutEffect } from 'react'
+import React from 'react'
 import DefaultApp from 'next/app'
-import dynamic from 'next/dynamic'
 
 /** COMPONENTS */
 
@@ -37,7 +33,7 @@ const App = ({ Component, pageProps, data, router, query }) => {
 	)
 }
 
-App.getInitialProps = async appContext => {
+App.getInitialProps = async (appContext) => {
 	const DataInterface = require('~/data')
 	const pageProps = await DefaultApp.getInitialProps(appContext)
 	const data = await DataInterface.fetch({ type: 'config' })

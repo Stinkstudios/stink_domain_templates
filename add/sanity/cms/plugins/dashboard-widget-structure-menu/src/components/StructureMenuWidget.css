@@ -1,5 +1,6 @@
 @import 'part:@sanity/base/theme/variables-style';
 
+/* stylelint-disable */
 .root {
   composes: container from "part:@sanity/dashboard/widget-styles";
 }
@@ -38,3 +39,5 @@
 .iconWrapper {
   font-size: 2em;
 }
+
+/* stylelint-enable */

@@ -1,15 +1,9 @@
 function importAll(requireFunction) {
-	return (ctx => {
+	return ((ctx) => {
 		return ctx
 			.keys()
 			.map(ctx)
-			.map((value, i) => [
-				ctx
-					.keys()
-					[i].replace('./image.', '')
-					.replace('.js', ''),
-				value.default
-			])
+			.map((value, i) => [ctx.keys()[i].replace('./image.', '').replace('.js', ''), value.default])
 	})(requireFunction)
 }
 
@@ -18,7 +12,7 @@ for (const func of importAll(require.context('./', false, /\.\/(?!image\.provide
 	providers[func[0]] = func[1]
 }
 
-const getProvider = name => {
+const getProvider = (name) => {
 	if (name) {
 		if (!process.env.IMAGE_PROVIDERS.includes(name) || typeof providers[name] === 'undefined') {
 			throw new Error(`Provider ${name} is not supported`)

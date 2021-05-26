@@ -1,5 +1,4 @@
 import productionClient from './productionClient'
-import client from 'part:@sanity/base/client'
 
 export async function getProductionPublishedState(id, type) {
 	const productionDocument = await productionClient.fetch(`*[_id == "${id}" && _type == "${type}"][0]`)
@@ -35,7 +34,7 @@ export function localizeObject(origObj, regionRefType) {
 	}
 
 	origObj.fields = [
-		...locaObj.fields.filter(f => f.name !== 'regionalized_reference'),
+		...locaObj.fields.filter((f) => f.name !== 'regionalized_reference'),
 		{
 			name: 'regionalized',
 			title: 'Regionalized Content',

@@ -17,7 +17,7 @@ if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
 		collapseGroups: true
 	})
 
-	const observer = new PerformanceObserver(list => {
+	const observer = new PerformanceObserver((list) => {
 		console.log('Long Task detected! 🚩️')
 		const entries = list.getEntries()
 		console.log(entries)

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import FormField from 'part:@sanity/components/formfields/default'
 import PatchEvent, { set, unset } from 'part:@sanity/form-builder/patch-event'
 
-const createPatchFrom = value => PatchEvent.from(value === '' ? unset() : set(Number(value)))
+const createPatchFrom = (value) => PatchEvent.from(value === '' ? unset() : set(Number(value)))
 
 export default class Slider extends React.Component {
 	static propTypes = {
@@ -38,8 +38,8 @@ export default class Slider extends React.Component {
 					max={max}
 					step={step}
 					value={value === undefined ? '' : value}
-					onChange={event => onChange(createPatchFrom(event.target.value))}
-					ref={element => (this._inputElement = element)}
+					onChange={(event) => onChange(createPatchFrom(event.target.value))}
+					ref={(element) => (this._inputElement = element)}
 				/>
 			</FormField>
 		)

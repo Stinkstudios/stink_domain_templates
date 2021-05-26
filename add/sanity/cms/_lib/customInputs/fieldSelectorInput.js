@@ -50,7 +50,7 @@ class FieldSelectorInput extends React.PureComponent {
 			>
 				<div className={styles.fieldSelectorInput}>
 					{type.fields
-						.filter(field => {
+						.filter((field) => {
 							return (
 								field.name.indexOf('toggleable') < 0 ||
 								(field.name.indexOf('toggleable') === 0 &&
@@ -66,7 +66,7 @@ class FieldSelectorInput extends React.PureComponent {
 								key={field.name}
 								type={field.type}
 								value={value && value[field.name]}
-								onChange={patchEvent => this.handleFieldChange(field, patchEvent)}
+								onChange={(patchEvent) => this.handleFieldChange(field, patchEvent)}
 								path={[field.name]}
 								focusPath={focusPath}
 								onFocus={onFocus}

@@ -37,7 +37,7 @@ class WindowSize {
 	subscribe(callback) {
 		this.subscribers.push(callback)
 		return () => {
-			this.subscribers.filter(cb => cb !== callback)
+			this.subscribers.filter((cb) => cb !== callback)
 		}
 	}
 

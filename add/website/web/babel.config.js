@@ -1,17 +1,15 @@
-module.exports = function(api) {
-	const isServer = api.caller(caller => caller?.isServer)
-	const isCallerDevelopment = api.caller(caller => caller?.isDev)
+const { DEPLOY_ENV } = process.env
 
-	const presets = [
-		[
-			'next/babel',
-			{
-				'preset-react': {
-					importSource: !isServer && isCallerDevelopment ? '@welldone-software/why-did-you-render' : 'react'
-				}
-			}
-		]
-	]
+const inProduction = DEPLOY_ENV === 'production'
 
-	return { presets }
+const presets = ['next/babel']
+
+const plugins = []
+if (inProduction !== true) {
+	plugins.push('react-component-data-attribute')
+}
+
+module.exports = {
+	presets,
+	plugins
 }

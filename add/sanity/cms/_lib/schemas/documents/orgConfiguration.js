@@ -1,5 +1,3 @@
-// import bcp47 from 'bcp47'
-
 export default {
 	name: 'orgConfig',
 	type: 'document',

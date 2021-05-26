@@ -13,7 +13,7 @@ import PatchEvent, { set, unset } from 'part:@sanity/form-builder/patch-event'
 
 import styles from './svgInput.css'
 
-const createPatchFrom = value => PatchEvent.from(value.svgString === null ? unset() : set(value))
+const createPatchFrom = (value) => PatchEvent.from(value.svgString === null ? unset() : set(value))
 
 export default class svgInput extends React.Component {
 	constructor(props) {
@@ -77,7 +77,7 @@ export default class svgInput extends React.Component {
 							accept={'image/svg+xml'}
 							icon={this.state.isUploadingSvgFile ? Spinner : UploadIcon}
 							disabled={this.state.isUploadingSvgFile}
-							onSelect={files => this.handleUploadSvgFile(files[0])}
+							onSelect={(files) => this.handleUploadSvgFile(files[0])}
 						>
 							Upload the SVG file
 						</FileInputButton>

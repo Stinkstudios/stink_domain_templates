@@ -5,7 +5,7 @@ const options = {
 
 class Observer {
 	constructor() {
-		this.intersectionObserver = new IntersectionObserver(entries => this.callback(entries), options)
+		this.intersectionObserver = new IntersectionObserver((entries) => this.callback(entries), options)
 		this.subscribers = {}
 	}
 

@@ -5,7 +5,7 @@ import ScrollPosition from '~/helpers/singletons/scrollPosition'
 
 import breakpoints from '~/global/settings/breakpoints.js'
 
-const getBreakpoint = width => {
+const getBreakpoint = (width) => {
 	if (width > 0) {
 		for (const breakpoint of breakpoints) {
 			if (width <= breakpoint.width) {
@@ -16,17 +16,17 @@ const getBreakpoint = width => {
 	return breakpoints[breakpoints.length - 1]
 }
 
-const UIStore = create(set => ({
+const UIStore = create((set) => ({
 	windowHeight: WindowSize.getSize().height,
 	windowWidth: WindowSize.getSize().width,
 	breakpoint: getBreakpoint(WindowSize.getSize().width),
 	scrollPositionX: ScrollPosition.getPosition().x,
 	scrollPositionY: ScrollPosition.getPosition().y,
 	isScrollLocked: false,
-	updateIsScrollLocked: isScrollLocked => set({ isScrollLocked })
+	updateIsScrollLocked: (isScrollLocked) => set({ isScrollLocked })
 }))
 
-WindowSize.subscribe(size => {
+WindowSize.subscribe((size) => {
 	const patch = {}
 	const currentState = UIStore.getState()
 	if (size.height !== currentState.windowHeight) {
@@ -43,7 +43,7 @@ WindowSize.subscribe(size => {
 	UIStore.setState({ windowHeight: size.height, windowWidth: size.width })
 })
 
-ScrollPosition.subscribe(position => {
+ScrollPosition.subscribe((position) => {
 	UIStore.setState({ scrollPositionX: position.x, scrollPositionY: position.y })
 })
 

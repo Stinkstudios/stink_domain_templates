@@ -24,7 +24,7 @@ class ScrollPosition {
 		if (this.isActive) {
 			if (this.x !== window.scrollX || this.y !== window.scrollY) {
 				this.setPosition(window.scrollX, window.scrollY)
-				this.subscribers.forEach(fn => {
+				this.subscribers.forEach((fn) => {
 					fn({ x: this.x, y: this.y, direction: this.direction })
 				})
 			}
@@ -35,7 +35,7 @@ class ScrollPosition {
 	subscribe(callback) {
 		this.subscribers.push(callback)
 		return () => {
-			this.subscribers.filter(cb => cb !== callback)
+			this.subscribers.filter((cb) => cb !== callback)
 		}
 	}
 
