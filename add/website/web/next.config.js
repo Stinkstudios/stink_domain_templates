@@ -21,9 +21,6 @@ const generateSassBreakpoint = () => {
 	return breakpointsString
 }
 
-/** i18N */
-const webpackCopyPagesToLanguages = require('./src/i18n/webpackCopyPagesToLanguages')
-
 const nextConfig = {
 	// distDir: 'build',
 	env,
@@ -34,7 +31,6 @@ const nextConfig = {
 	},
 	pageExtensions: ['jsx'],
 	webpack: config => {
-		webpackCopyPagesToLanguages(config)
 		config.module.rules.push({
 			test: /\.(mp4|webm|mp3)$/,
 			use: [
