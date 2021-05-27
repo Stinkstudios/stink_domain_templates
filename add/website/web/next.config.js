@@ -7,7 +7,7 @@ const path = require('path')
 const projectJsonText = readFileSync(path.join(__dirname, '../project.json'), 'utf8')
 const projectConfig = JSON.parse(projectJsonText)
 // eslint-disable-next-line prefer-const
-let env = {}
+let env = projectConfig
 
 /** CREATE ENV FROM CONFIG FILE */
 
