@@ -1,5 +1,4 @@
-export { default as getValueFromHash } from './functions/getValueFromHash'
 export { default as getLinkProps } from './functions/getLinkProps'
-export { default as urlFor } from './functions/urlFor'
-export { default as processSizes } from './functions/processSizes'
-export { default as generateSrcSet } from './functions/generateSrcSet'
+export { default as getImageFromSrc } from './functions/getImageFromSrc'
+export { default as hexToRGB } from './functions/hexToRGB'
+export { default as handleBrowserScope } from './functions/handleBrowserScope'

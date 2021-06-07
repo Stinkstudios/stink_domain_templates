@@ -8,7 +8,7 @@ const HTMLHead = ({ i18n }) => (
 			name="robots"
 			content={process.env.NODE_ENV === 'production' ? 'index,follow' : 'noindex,nofollow'}
 		/>
-		<title>{i18n.META_TITLE}</title>
+		<title></title>
 		<meta key="twitter:site" name="twitter:site" content={''} />
 		<meta key="og:site_name" property="og:site_name" content={''} />
 		<link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon"></link>
@@ -24,6 +24,7 @@ const HTMLHead = ({ i18n }) => (
 		<meta name="msapplication-TileColor" content="#ffffff" />
 		<meta name="msapplication-TileImage" content="/favicon/icon-144x144.png" />
 		<meta name="theme-color" content="#ffffff" />
+		<script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}`}></script>
 	</Head>
 )
 

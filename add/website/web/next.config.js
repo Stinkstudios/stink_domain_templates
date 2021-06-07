@@ -1,3 +1,6 @@
+//eslint-disable-next-line no-used-vars
+const { readFileSync, writeFileSync } = require('fs')
+
 const breakpoints = require('./src/global/settings/breakpoints')
 const path = require('path')
 
@@ -6,6 +9,8 @@ const projectConfig = require('project-wide-config')
 let env = projectConfig.baseEnv
 
 /** CREATE ENV FROM CONFIG FILE */
+
+
 const NextComposeWithPlugins = require('next-compose-plugins')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
 	enabled: process.env.ANALYZE === 'true'

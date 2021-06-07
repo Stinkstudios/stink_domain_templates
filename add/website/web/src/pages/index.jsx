@@ -1,4 +1,5 @@
 import CSS from './home.module.sass'
+import HTMLHead from '~/components/htmlHead'
 
 export const getStaticProps = async () => {
 	const DataInterface = require('~/data')
@@ -13,7 +14,12 @@ export const getStaticProps = async () => {
 }
 
 const Home = () => {
-	return <div className={`${CSS.home}`}>Home</div>
+	return (
+		<div className={`${CSS.home}`}>
+			<HTMLHead/>
+			<div>Home</div>
+		</div>
+	)
 }
 
 Home.displayName = 'Home'
