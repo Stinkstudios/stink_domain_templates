@@ -1,9 +1,9 @@
 --
-to: project.json
-at_line: 2
+to: project-wide-config/project.json
+after: "\"baseEnv\": {"
 inject: true
 --
-    "sanity": {
-        "project_id": "<%= sanityProjectID =>",
-        "default_dataset": "<%= sanityProjectDataset =>"
-    },
+        "SANITY_PROJECT_ID": "<%= sanityProjectID =>",
+        "SANITY_DATASET": "<%= sanityProjectDataset =>",
+        "SANITY_TOKEN": "XXXXXXXXX"
+

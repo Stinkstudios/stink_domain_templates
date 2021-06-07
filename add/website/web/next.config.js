@@ -1,8 +1,9 @@
 const breakpoints = require('./src/global/settings/breakpoints')
 const path = require('path')
 
+const projectConfig = require('project-wide-config')
 // eslint-disable-next-line prefer-const
-let env = {}
+let env = projectConfig.baseEnv
 
 /** CREATE ENV FROM CONFIG FILE */
 const NextComposeWithPlugins = require('next-compose-plugins')
