@@ -1,5 +1,4 @@
-//eslint-disable-next-line no-used-vars
-const { readFileSync, writeFileSync } = require('fs')
+const { readFileSync } = require('fs')
 
 const breakpoints = require('./src/global/settings/breakpoints')
 const path = require('path')
