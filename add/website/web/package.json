@@ -10,8 +10,7 @@
 		"build": "next build",
 		"start": "next start -p 8080",
 		"prod": "npm run build && next export",
-		"test": "node next.config.js",
-		"use:hygen": "git submodule add -f https://github.com/Stinkstudios/stink_web_templates _templates && rm -f .gitmodules"
+		"test": "node next.config.js"
 	},
 	"dependencies": {
 		"@netlify/functions": "^0.6.0",
@@ -32,8 +31,6 @@
 		"focus-visible": "^5.1.0",
 		"gsap": "^3.6.1",
 		"hygen": "^6.0.4",
-		"i18next": "^20.2.1",
-		"i18next-browser-languagedetector": "^6.1.0",
 		"imagemin-mozjpeg": "^9.0.0",
 		"imagemin-optipng": "^8.0.0",
 		"imagemin-pngquant": "^9.0.0",
@@ -44,6 +41,7 @@
 		"next": "10.1.2",
 		"next-compose-plugins": "2.2.0",
 		"normalize.css": "8.0.1",
+		"project-wide-config": "file:../project-wide-config",
 		"react": "17.0.2",
 		"react-dom": "17.0.2",
 		"react-i18next": "^11.8.13",

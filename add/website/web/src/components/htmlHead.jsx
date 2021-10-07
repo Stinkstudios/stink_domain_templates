@@ -1,7 +1,10 @@
 import Head from 'next/head'
+import browserDetect from '~/helpers/string.browserdetect'
+import projectConfig from 'project-wide-config'
 
 const HTMLHead = ({ i18n }) => (
 	<Head>
+		<script dangerouslySetInnerHTML={{__html: browserDetect(projectConfig.browserScope.browsers)}}></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 		<meta
 			key="robots"

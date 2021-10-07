@@ -5,7 +5,7 @@ import '~/global/styles/base.sass'
 import '~/global/styles/variables.sass'
 
 /** 3RD PARTY */
-import React, { useEffect }  from 'react'
+import React, { useEffect, useLayoutEffect }  from 'react'
 import DefaultApp from 'next/app'
 
 /** COMPONENTS */
@@ -13,8 +13,6 @@ import Analytics from '~/helpers/singletons/analytics'
 
 /** LAYOUTS */
 import * as layouts from '~/layouts'
-import {handleBrowserScope} from '~/helpers'
-handleBrowserScope()
 
 const App = ({ Component, pageProps, data, router, query }) => {
 	const Layout = layouts[Component.layout] ? layouts[Component.layout] : layouts.default

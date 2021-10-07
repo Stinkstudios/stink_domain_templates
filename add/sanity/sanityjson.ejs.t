@@ -1,6 +1,6 @@
---
-to: <%= path %>/sanity.json
---
+---
+to: '<%= directoryName %>/sanity.json'
+---
 {
   "root": true,
   "api": {

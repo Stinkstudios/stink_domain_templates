@@ -1,4 +1,4 @@
-import projectConfig from '~/built.project.js'
+import projectConfig from 'project-wide-config'
 export default {
 	name: 'localizedString',
 	title: 'Footer',

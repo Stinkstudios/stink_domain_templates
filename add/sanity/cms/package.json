@@ -40,6 +40,7 @@
 		"generate-unique-id": "^2.0.1",
 		"link-module-alias": "^1.2.0",
 		"lodash.clonedeep": "^4.5.0",
+		"project-wide-config": "file:../project-wide-config",
 		"prop-types": "^15.7.2",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
