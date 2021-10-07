@@ -1,0 +1,42 @@
+.image {
+	position: relative;
+	overflow: hidden;
+}
+
+.img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+
+	&.isPlaceholder {
+		$slicedBreakpoints: nth-delete(map.keys($breakpoints), -1);
+		$lastBreakpoint: list.nth(map.keys($breakpoints), list.length($breakpoints));
+		position: static;
+		display: none;
+		height: auto;
+		@include above($lastBreakpoint) {
+			&.#{$lastBreakpoint} {
+				display: block;
+			}
+		}
+
+		&.singleAspectRatio {
+			display: block;
+		}
+		@each $breakpoint in $slicedBreakpoints {
+			&.#{$breakpoint} {
+				@include at($breakpoint) {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&.isLoader {
+		pointer-events: none;
+	}
+}

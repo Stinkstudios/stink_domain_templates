@@ -1,27 +1,22 @@
 import breakpoints from '~/global/settings/breakpoints'
 
-import getProvider from './providers/image.providers'
-import generateSrcSet from './image.generateSrcSet'
+import getProvider from './providers/Image.providers'
+import generateSrcSet from './Image.generateSrcSet'
 
-const defaultGetSources = ({ srcsets = null, load }) => {
+const defaultGetSources = ({ srcsets = null }) => {
 	if (srcsets !== null && srcsets.length > 0) {
 		return (
 			<>
-				{breakpoints.map((breakpoint, i) => {
-					const srcSetProp = {}
-					if (load) {
-						srcSetProp.srcSet = srcsets[i].path
-					}
-					return (
+				{breakpoints.map(
+					(breakpoint, i) =>
 						srcsets[i] && (
 							<source
 								media={i < srcsets.length - 1 ? `(max-width: ${breakpoint.width}px)` : ''}
 								key={breakpoint.name}
-								{...srcSetProp}
+								srcSet={srcsets[i].path}
 							/>
 						)
-					)
-				})}
+				)}
 			</>
 		)
 	}

@@ -4,13 +4,11 @@ const { readFileSync, writeFileSync } = require('fs')
 const breakpoints = require('./src/global/settings/breakpoints')
 const path = require('path')
 
-const projectJsonText = readFileSync(path.join(__dirname, '../project.json'), 'utf8')
-const projectConfig = JSON.parse(projectJsonText)
+const projectConfig = require('project-wide-config')
 // eslint-disable-next-line prefer-const
 let env = projectConfig.baseEnv
 
 /** CREATE ENV FROM CONFIG FILE */
-
 
 const NextComposeWithPlugins = require('next-compose-plugins')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
@@ -38,8 +36,8 @@ const generateSassBreakpoint = () => {
 
 const nextConfig = {
 	env,
-	target: process.env.DEPLOY_ENV === 'production' ? 'server' : 'serverless',
-	trailingSlashes: true, // For Google App Engine - WIP
+	target: process.env.DEPLOY_ENV === 'production' ? 'server' : 'serverless', // NOTE: for netlify
+	trailingSlashes: true, // NOTE: For Google App Engine - WIP
 	future: {
 		webpack5: true
 	},
@@ -76,22 +74,17 @@ const nextConfig = {
 		})
 		config.resolve.plugins.push(new DirectoryNamedWebpackPlugin(true))
 		config.resolve.alias['~'] = path.resolve(__dirname, 'src/')
-		config.resolve.alias['^'] = path.join(__dirname, '../')
-		config.plugins.push(
-			new webpack.ProvidePlugin({
-				globalCSS: path.resolve(path.join(__dirname, 'src/global/styles/global.module.sass'))
-			})
-		)
+		config.resolve.alias.g = path.join(__dirname, 'src/global/styles/global.module.scss')
 		return config
 	},
 	sassOptions: {
 		prependData: `
-		${generateSassBreakpoint()}
-		@use 'sass:map'
-		@use 'sass:list'
-		@import '~rupture-sass/rupture'
-		@import '~/global/styles/settings.sass'
-		@import '~/global/styles/helpers.sass'
+		${generateSassBreakpoint()};
+		@use 'sass:map';
+		@use 'sass:list';
+		@import '~rupture-sass/rupture';
+		@import '~/global/styles/settings.scss';
+		@import '~/global/styles/helpers.scss';
 		`
 	}
 }

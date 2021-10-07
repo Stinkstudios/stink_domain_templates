@@ -19,11 +19,14 @@ class Observer {
 	}
 
 	subscribe(element, callback) {
-		this.subscribers[element.id] = callback
-		this.intersectionObserver.observe(element)
-		return () => {
-			this.unsubscribe(element)
+		if (element !== null) {
+			this.subscribers[element.id] = callback
+			this.intersectionObserver.observe(element)
+			return () => {
+				this.unsubscribe(element)
+			}
 		}
+		return () => {}
 	}
 
 	unsubscribe(element) {

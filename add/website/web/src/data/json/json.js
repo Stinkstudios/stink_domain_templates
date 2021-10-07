@@ -1,9 +1,6 @@
-const config = require('./config')
-const page = require('./pages')
-
 const jsons = {
-	config,
-	page
+	config: require('./config'),
+	pages: require('./pages')
 }
 
 const json = async (request) => {

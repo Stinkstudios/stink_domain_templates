@@ -1,4 +1,4 @@
-import CSS from './header.module.sass'
+import CSS from './header.module.scss'
 
 const Header = () => {
 	return <header className={`${CSS['m-header']}`}>header</header>

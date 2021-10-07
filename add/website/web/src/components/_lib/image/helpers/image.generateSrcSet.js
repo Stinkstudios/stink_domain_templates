@@ -1,4 +1,4 @@
-import getProvider from './providers/image.providers'
+import getProvider from './providers/Image.providers'
 
 const generateSrcSet = (options = {}) => {
 	const provider = getProvider(options.provider)

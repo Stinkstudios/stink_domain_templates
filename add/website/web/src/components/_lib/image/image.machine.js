@@ -1,6 +1,6 @@
-import { Machine } from 'xstate'
+import { createMachine } from 'xstate'
 
-export const machine = Machine({
+export const machine = createMachine({
 	id: 'image',
 	initial: 'idle',
 	states: {

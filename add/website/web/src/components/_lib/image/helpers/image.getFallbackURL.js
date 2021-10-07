@@ -1,4 +1,4 @@
-import getProvider from './providers/image.providers'
+import getProvider from './providers/Image.providers'
 
 const getFallbackURL = (options) => {
 	const provider = getProvider(options.provider)

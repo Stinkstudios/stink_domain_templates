@@ -1,4 +1,4 @@
-import CSS from './footer.module.sass'
+import CSS from './footer.module.scss'
 
 const Footer = () => {
 	return <footer className={`${CSS['m-footer']}`}></footer>

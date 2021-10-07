@@ -1,4 +1,4 @@
-export { default as HTMLHead } from './htmlHead'
-export { default as Header } from './header'
-export { default as Footer } from './footer'
-export { default as Image } from './_lib/image'
+export { default as HTMLHead } from './HTMLHead'
+export { default as Header } from './Header'
+export { default as Footer } from './Footer'
+export { default as Image } from './_lib/Image'
