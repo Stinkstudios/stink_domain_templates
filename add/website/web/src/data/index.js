@@ -1,4 +1,5 @@
 const json = require('./json/json')
+const sanity = require('./sanity')
 
 class DataInterface {
 	defaults() {
@@ -34,7 +35,9 @@ class DataInterface {
 		return await sanity(request)
 	}
 
-	async fetchGOOGLESHEETS(request) {}
+	async fetchGOOGLESHEETS(request) {
+		// NOTE: need to implement
+	}
 }
 
 module.exports = new DataInterface({

@@ -1,3 +1,4 @@
+const breakpoints = require('../src/global/settings/breakpoints')
 const webpackFileloaderRule = {
 	test: /\.(mp4|webm|mp3)$/,
 	use: [
@@ -28,7 +29,28 @@ const webpackResponsiveLoaderRule = {
 	]
 }
 
+const webpackSpriteLoaderRule = {
+	test: /\.(svg)$/i,
+	resourceQuery: /sprite/,
+	loader: 'svg-sprite-loader'
+}
+
+const webpackSVGRRule = {
+	test: /\.(svg)$/i,
+	resourceQuery: /^$/,
+	use: [
+		{
+			loader: '@svgr/webpack',
+			options: {
+				ref: true
+			}
+		}
+	]
+}
+
 module.exports = {
 	webpackFileloaderRule,
-	webpackResponsiveLoaderRule
+	webpackResponsiveLoaderRule,
+	webpackSpriteLoaderRule,
+	webpackSVGRRule
 }

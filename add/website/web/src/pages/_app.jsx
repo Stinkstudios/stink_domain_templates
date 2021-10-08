@@ -5,7 +5,7 @@ import '~/global/styles/base.sass'
 import '~/global/styles/variables.sass'
 
 /** 3RD PARTY */
-import React, { useEffect, useLayoutEffect }  from 'react'
+import React, { useEffect } from 'react'
 import DefaultApp from 'next/app'
 
 /** COMPONENTS */
