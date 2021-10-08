@@ -1,5 +1,6 @@
 const jsons = {
 	config: require('./config'),
+	siteCopy: require('./siteCopy'),
 	pages: require('./pages')
 }
 
