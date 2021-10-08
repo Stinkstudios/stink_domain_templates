@@ -5,8 +5,7 @@ const blocks = () => `
 	children,
 	markDefs[] {
 	  _key,
-	  _type,
-	  ${fields.blockLink('customLink')}
+	  _type
 	}
 `
 export default blocks

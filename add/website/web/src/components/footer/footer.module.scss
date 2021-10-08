@@ -1,46 +1,8 @@
-.m-footer
-	position: absolute
-	bottom: 0
-	padding: 29px 0
-	line-height: 1
-	z-index: 2
-	width: 100%
-
-	&__left
-		white-space: nowrap
-		grid-column: start / span 2
-
-		&__logo
-			grid-column: start / span 2
-
-			svg
-				height: 40px
-
-				path
-					fill: var(--lime-color)
-
-	&__center
-		display: flex
-		justify-content: center
-		align-items: center
-
-		&__list
-			display: flex
-
-			&__item
-				&:not(:first-child)
-					margin-left: 31px
-
-				&__link
-					color: var(--tangerine-color)
-					text-decoration: none
-					text-transform: uppercase
-
-.m-footer__splash
-	color: var(--lime-color)
-
-	&__center
-		&__list
-			&__item
-				&__link
-					color: var(--lime-color)
+.m-footer {
+	position: absolute;
+	bottom: 0;
+	padding: 29px 0;
+	line-height: 1;
+	z-index: 2;
+	width: 100%;
+}

@@ -1,4 +1,4 @@
-import CSS from './notSupported.module.sass'
+import CSS from './notSupported.module.scss'
 
 export const getStaticProps = async (props) => {
 	const DataInterface = require('~/data')

@@ -1,8 +1,6 @@
 import { useRef } from 'react'
-import Footer from '~/components/footer'
-import Header from '~/components/header'
-
-import CSS from './default.module.sass'
+import { Transition, Footer, Header } from '~/components'
+import CSS from './default.module.scss'
 
 const Default = ({ children, data, i18n }) => {
 	const $element = useRef()
@@ -10,7 +8,9 @@ const Default = ({ children, data, i18n }) => {
 	return (
 		<div className={`${CSS.default}`} ref={$element}>
 			<Header i18n={i18n} data={data} />
-			{children}
+			<main id="main" role="main">
+				<Transition>{children}</Transition>
+			</main>
 			<Footer i18n={i18n} data={data} />
 		</div>
 	)

@@ -1,8 +1,7 @@
 import { useRef, forwardRef, useImperativeHandle } from 'react'
-import CSS from './home.module.sass'
 import { HTMLHead } from '~/components'
-
 import { defaultPageTransition } from '~/helpers'
+import CSS from './home/home.module.scss'
 export { getStaticProps } from './home/home.gsp'
 
 const Home = ({ data }, ref) => {

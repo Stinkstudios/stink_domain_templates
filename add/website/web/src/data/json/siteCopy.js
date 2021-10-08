@@ -6,7 +6,7 @@ const siteCopy = (args) => {
 	}
 
 	// NOTE: change this
-	const lang = args.lang || 'en'
+	const lang = args?.lang || 'en'
 	return copy[lang]
 }
 

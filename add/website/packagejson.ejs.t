@@ -3,8 +3,8 @@ to: 'package.json'
 inject: true
 after: '	"scripts": {'
 ---
-		"<%= directoryName %>:dev": "cd ./<%= directoryName %> && npm run dev",
-		"<%= directoryName %>:prod": "cd ./<%= directoryName %> && npm run prod",
-		"<%= directoryName %>:i": "npm i --prefix ./<%= directoryName %>",
-		"<%= directoryName %>:uninstall": "npm uninstall --prefix ./<%= directoryName %>",
-		"<%= directoryName %>:hygen": "cd ./<%= directoryName %> && hygen",
+		"<%= name %>:dev": "cd ./<%= name %> && npm run dev",
+		"<%= name %>:prod": "cd ./<%= name %> && npm run prod",
+		"<%= name %>:i": "npm i --prefix ./<%= name %>",
+		"<%= name %>:uninstall": "npm uninstall --prefix ./<%= name %>",
+		"<%= name %>:hygen": "cd ./<%= name %> && hygen",

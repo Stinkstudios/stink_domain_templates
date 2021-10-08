@@ -1,4 +1,4 @@
-import CSS from './home.module.sass'
+import CSS from './home/home.module.scss'
 
 const _404 = () => {
 	return <div className={`${CSS['p-home']}`}>404</div>

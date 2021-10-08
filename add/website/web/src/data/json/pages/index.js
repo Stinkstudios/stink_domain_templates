@@ -1,5 +1,6 @@
 const pages = {
-	home: require('./home')
+	home: require('./home'),
+	notSupported: require('./notSupported')
 }
 
 const Pages = (args) => pages[args.name](args)

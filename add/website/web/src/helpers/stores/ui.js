@@ -23,7 +23,9 @@ const UIStore = create((set) => ({
 	scrollPositionX: ScrollPosition.getPosition().x,
 	scrollPositionY: ScrollPosition.getPosition().y,
 	isScrollLocked: false,
-	updateIsScrollLocked: (isScrollLocked) => set({ isScrollLocked })
+	updateIsScrollLocked: (isScrollLocked) => set({ isScrollLocked }),
+	isAnimating: true,
+	updateIsAnimating: (isAnimating) => set({ isAnimating })
 }))
 
 WindowSize.subscribe((size) => {

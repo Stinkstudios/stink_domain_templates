@@ -1,8 +1,8 @@
+import '~/helpers/wdyr.js'
 import 'normalize.css'
 import 'focus-visible'
-
-import '~/global/styles/base.sass'
-import '~/global/styles/variables.sass'
+import '~/global/styles/base.scss'
+import '~/global/styles/variables.scss'
 
 /** 3RD PARTY */
 import React, { useEffect, useLayoutEffect } from 'react'
@@ -67,9 +67,7 @@ const App = ({ Component, pageProps, data, router, query }) => {
 				<a href="#main">Skip to main content</a>
 			</div>
 			<Layout data={data} query={query}>
-				<main id="main" role="main">
-					<Component query={query} key={router.pathname} data={data} {...pageProps} />
-				</main>
+				<Component query={query} key={router.asPath} data={data} {...pageProps} />
 			</Layout>
 		</>
 	)

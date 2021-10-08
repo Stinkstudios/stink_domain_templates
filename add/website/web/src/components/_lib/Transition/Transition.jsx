@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react'
 import useUIStore from '~/helpers/stores/ui'
 
 const Transition = function({ children, ...props }) {
-	const updateIsAnimating = useUIStore((state) => state.updateIsAnimating)
 	const [components, setComponents] = useState([children])
 	const [lifecycle, setLifeCycle] = useState('transitioning')
 
@@ -11,7 +10,6 @@ const Transition = function({ children, ...props }) {
 	const $el = useRef()
 	const currentRef = useRef()
 	const nextRef = useRef()
-
 	useEffect(() => {
 		if (!children) return
 		if (components[0].key === children.key) return
@@ -25,9 +23,9 @@ const Transition = function({ children, ...props }) {
 	}, [components])
 
 	const transitionStart = () => {
-		updateIsAnimating(true)
+		if (!currentRef.current) return transitionEnd()
 		scrollHeight.current = currentRef.current.getScrollHeight()
-		if (components.length === 1) return currentRef.current.entryTransition().then(transitionEnd)
+		if (components.length === 1) return currentRef.current.entryTransition({}).then(transitionEnd)
 		const from = components[0]
 		const to = components[1]
 		Promise.all([
@@ -37,7 +35,6 @@ const Transition = function({ children, ...props }) {
         .then(transitionEnd)
 	}
 	const transitionEnd = () => {
-		updateIsAnimating(false)
 		window.scrollTo(0, 0)
 		setLifeCycle('resting')
 		currentRef.current = nextRef.current
