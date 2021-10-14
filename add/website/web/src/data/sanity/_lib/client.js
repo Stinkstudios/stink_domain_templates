@@ -5,6 +5,7 @@ const params = {
 	useCdn: process.env.DEPLOY_ENV === 'production',
 	apiVersion: '2021-03-25'
 }
-const client = sanityClient(params)
+let client = {}
+if (process.env.SANITY_PROJECT_ID) sanityClient(params)
 
 module.exports = client
