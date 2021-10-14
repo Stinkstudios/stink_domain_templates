@@ -19,6 +19,4 @@ const sassOptions = {
     `
 }
 
-module.exports = {
-	sassOptions
-}
+module.exports = sassOptions
