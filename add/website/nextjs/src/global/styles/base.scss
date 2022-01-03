@@ -39,6 +39,10 @@ body {
 	}
 }
 
+img:not([src]):not([srcset]) {
+	visibility: hidden;
+}
+
 input:-webkit-autofill {
 	transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
 	animation-name: onAutoFillStart;

@@ -4,7 +4,9 @@ const path = require('path')
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin')
 const { webpackResponsiveLoaderRule, webpackFileloaderRule } = require('./webpackRules')
 const sassOptions = require('./styleConfig')
-env.GA_ID = 'XXX' // NOTE: this is default in the web boilerplate so it needs a default value
+
+// eslint-disable-next-line no-console
+console.log(env)
 const nextConfig = {
 	target: process.env.DEPLOY_ENV === 'production' ? 'server' : 'serverless', // NOTE: for netlify
 	env,

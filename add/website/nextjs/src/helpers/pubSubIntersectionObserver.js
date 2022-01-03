@@ -1,19 +1,23 @@
-const options = {
-	rootMargin: '0px',
-	threshold: 0
-}
+class PubSubIntersectionObserver {
+	get defaults() {
+		return {
+			rootMargin: '0px',
+			threshold: 0,
+			callOnce: true
+		}
+	}
 
-class Observer {
-	constructor() {
-		this.intersectionObserver = new IntersectionObserver((entries) => this.callback(entries), options)
+	constructor(options) {
+		Object.assign(this, Object.assign(this.defaults, options))
+		this.intersectionObserver = new IntersectionObserver(this.callback.bind(this), options)
 		this.subscribers = {}
 	}
 
 	callback(entries) {
 		for (const entry of entries) {
 			if (entry.isIntersecting) {
-				this.subscribers[entry.target.id]()
-				this.unsubscribe(entry.target)
+				this.subscribers[entry.target.id](entry)
+				if (this.callOnce) this.unsubscribe(entry.target)
 			}
 		}
 	}
@@ -35,4 +39,4 @@ class Observer {
 	}
 }
 
-export default new Observer()
+export default PubSubIntersectionObserver

@@ -1,0 +1,5 @@
+export { default as cloudinary } from './CloudinaryImage'
+export { default as picsum } from './PicsumImage'
+export { default as sanity } from './SanityImage'
+export { default as local } from './ResponsiveImage'
+export { default } from './BaseImage'
