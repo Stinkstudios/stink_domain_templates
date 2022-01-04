@@ -1,8 +1,8 @@
 import '~/helpers/wdyr.js'
 import 'normalize.css'
 import 'focus-visible'
-import '~/global/styles/base.scss'
-import '~/global/styles/variables.scss'
+import '~/styles/base.scss'
+import '~/styles/variables.scss'
 
 /** 3RD PARTY */
 import React, { useEffect, useLayoutEffect } from 'react'
@@ -16,8 +16,8 @@ import useFoucFix from '~/helpers/useFouc'
 /** LAYOUTS */
 import * as layouts from '~/layouts'
 
-const getInitialProps = async (appContext) => {
-	const DataInterface = require('~/data')
+const getInitialProps = async appContext => {
+	const DataInterface = require('data-interface')
 	const pageProps = await DefaultApp.getInitialProps(appContext)
 	const data = await DataInterface.fetch({ type: 'config' })
 	data.i18n = await DataInterface.fetch({ type: 'siteCopy' })
@@ -27,6 +27,9 @@ const getInitialProps = async (appContext) => {
 		query: appContext.router.query
 	}
 }
+
+// NOTE: STOP SCREAMING AT ME, NEXT CONSOLE!!!
+if (typeof document === 'undefined') React.useLayoutEffect = React.useEffect
 
 const App = ({ Component, pageProps, data, router, query }) => {
 	useFoucFix()

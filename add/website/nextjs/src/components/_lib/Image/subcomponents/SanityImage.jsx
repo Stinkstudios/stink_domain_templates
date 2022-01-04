@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 import BaseImage from './BaseImage'
-import breakpoints from '~/global/settings/breakpoints'
+import { breakpoints } from 'local-config'
 const SanityImage = (props, ref) => {
 	validate(props)
 	const _props = Object.assign({}, props)

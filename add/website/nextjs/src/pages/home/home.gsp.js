@@ -1,5 +1,5 @@
 const getStaticProps = async () => {
-	const DataInterface = require('~/data')
+	const DataInterface = require('data-interface')
 	const data = await DataInterface.fetch({ type: 'page', args: { name: 'home' } })
 
 	return {

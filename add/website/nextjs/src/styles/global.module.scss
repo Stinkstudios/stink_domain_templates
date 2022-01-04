@@ -1,0 +1,25 @@
+.grid {
+	--grid-max-content-width: 100%;
+
+	display: grid;
+	grid-column-gap: var(--grid-gutter-size, 20px);
+	grid-template-rows: auto;
+	grid-template-columns: [wrapper-start] minmax(calc(var(--grid-margin-size, 40px) - var(--grid-gutter-size, 20px)), 1fr) [start] repeat(var(--grid-number-of-columns, 12), minmax(0, calc(var(--grid-max-content-width) / var(--grid-number-of-columns, 12) - var(--grid-gutter-size, 20px) * (var(--grid-number-of-columns, 12) - 1) / var(--grid-number-of-columns, 12)))) [end] minmax(calc(var(--grid-margin-size, 40px) - var(--grid-gutter-size, 20px)), 1fr) [wrapper-end];
+	width: 100%;
+}
+
+.font-giant-title {
+	font-weight: 300;
+	font-size: 13vw;
+	font-family: var(--sans-serif);
+	line-height: 115%;
+}
+
+.subgrid {
+	display: grid;
+	grid-column: start / end;
+	grid-column-gap: var(--grid-gutter-size, 20px);
+	grid-template-rows: auto;
+	grid-template-columns: [start] repeat(var(--grid-number-of-columns, 12), minmax(0, calc(var(--grid-max-content-width) / var(--grid-number-of-columns, 12) - var(--grid-gutter-size, 20px) * (var(--grid-number-of-columns, 12) - 1) / var(--grid-number-of-columns, 12)))) [end];
+	width: 100%;
+}

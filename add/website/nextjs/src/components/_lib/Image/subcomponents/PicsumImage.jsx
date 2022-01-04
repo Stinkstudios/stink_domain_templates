@@ -1,5 +1,5 @@
 import BaseImage from './BaseImage'
-import breakpoints from '~/global/settings/breakpoints'
+import { breakpoints } from 'local-config'
 import { forwardRef, useRef } from 'react'
 
 const PicsumImage = (props, ref) => {
@@ -21,6 +21,7 @@ const validate = props => {
 		// eslint-disable-next-line no-console
 		console.error("the image component requires the props 'height' and 'width' be passed in")
 		return false
+	}
 }
 
 const generateSrcSet = ({ sizes, index, height, width }) => {

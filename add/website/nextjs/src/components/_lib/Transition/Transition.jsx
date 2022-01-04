@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-import useUIStore from '~/helpers/stores/ui'
+// import useUIStore from '~/stores/ui'
 
 const Transition = function({ children, ...props }) {
 	const [components, setComponents] = useState([children])
@@ -14,7 +14,7 @@ const Transition = function({ children, ...props }) {
 		if (!children) return
 		if (components[0].key === children.key) return
 		setLifeCycle('transitioning') // is this a race condition?
-		setComponents((cmpnts) => [cmpnts[0], children])
+		setComponents(cmpnts => [cmpnts[0], children])
 	}, [children])
 
 	useEffect(() => {
@@ -66,7 +66,7 @@ const Transition = function({ children, ...props }) {
 							<Component.type
 								{...Component.props}
 								transition={{ lifecycle, scrollHeight: scrollHeight.current }}
-								ref={(node) => (idx === 0 ? (currentRef.current = node) : (nextRef.current = node))}
+								ref={node => (idx === 0 ? (currentRef.current = node) : (nextRef.current = node))}
 							/>
 						</div>
 					)

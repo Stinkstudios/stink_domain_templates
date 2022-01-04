@@ -1,5 +1,5 @@
 import BaseImage from './BaseImage'
-import breakpoints from '~/global/settings/breakpoints'
+import { breakpoints } from 'local-config'
 import { forwardRef } from 'react'
 
 const CloudinaryImage = (props, ref) => {

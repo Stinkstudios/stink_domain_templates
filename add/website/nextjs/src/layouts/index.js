@@ -1,2 +1,2 @@
-export { default as default} from './default'
+export { default as default } from './Default'
 export { default as NotSupported } from './notSupported'

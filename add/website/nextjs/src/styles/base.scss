@@ -1,0 +1,142 @@
+/* stylelint-disable */
+
+html {
+	font-weight: 300;
+	font-size: 16px;
+	font-family: Helvetica, sans-serif;
+	line-height: 1;
+	touch-action: pan-y;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	text-decoration-position: from-font;
+	text-underline-offset: 0.08em;
+	text-decoration-thickness: 1px;
+	text-decoration-skip-ink: none;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		text-decoration-line: underline;
+		text-underline-offset: 0.08em;
+		text-decoration-thickness: 1px;
+	}
+}
+
+html,
+body,
+#__next,
+main {
+	width: 100%;
+	min-height: 100%;
+}
+
+body {
+	&.-grabbing * {
+		cursor: grabbing !important;
+	}
+}
+
+img:not([src]):not([srcset]) {
+	visibility: hidden;
+}
+
+input:-webkit-autofill {
+	transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+	animation-name: onAutoFillStart;
+}
+
+input:not(:-webkit-autofill) {
+	animation-name: onAutoFillCancel;
+}
+
+.visually-hidden {
+	position: fixed !important;
+	top: 0;
+	left: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+
+	/* added line */
+	white-space: nowrap;
+
+	/* IE6, IE7 */
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+.-locked {
+	height: 100%;
+
+	body {
+		position: fixed;
+		overflow: hidden;
+		height: 100%;
+
+		#__next {
+			overflow-y: scroll;
+		}
+	}
+}
+
+button {
+	padding: 0;
+	background: none;
+	border: unset;
+	cursor: pointer;
+}
+
+#skip {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	margin-left: 0;
+	text-align: center;
+	list-style: outside none;
+}
+
+#skip li {
+	list-style-type: none;
+}
+
+#skip a {
+	position: absolute;
+	top: 30px;
+	left: -99999px;
+}
+
+#skip a:focus,
+#skip a:active {
+	position: relative;
+	left: 0;
+	z-index: 9999;
+	width: 75%;
+	height: auto;
+	margin: 0 auto;
+	padding: 30px 45px;
+	color: #000;
+	font: bold 50px 'Arial', 'Freesans', sans-serif !important;
+	letter-spacing: -4px !important;
+	text-align: center;
+	text-decoration: none;
+	background: #fff;
+
+	/* Color information, edit this to suit the colors of your layout */
+	border: 1px dotted #ffb4db;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: inherit;
+    fill: inherit;
+}
+
+/* stylelint-enable */
