@@ -1,4 +1,4 @@
-const breakpoints = require('../src/global/settings/breakpoints')
+const breakpoints = require('../local-config/breakpoints')
 const webpackFileloaderRule = {
 	test: /\.(mp4|webm|mp3)$/,
 	use: [
@@ -20,7 +20,7 @@ const webpackResponsiveLoaderRule = {
 				loader: 'responsive-loader',
 				options: {
 					adapter: require('responsive-loader/sharp'),
-					sizes: breakpoints.map((breakpoint) => breakpoint.width),
+					sizes: breakpoints.map(breakpoint => breakpoint.width),
 					publicPath: `/_next/static/files`,
 					outputPath: 'static/files'
 				}

@@ -13,6 +13,7 @@
 		"test": "node next.config.js"
 	},
 	"dependencies": {
+		"@iarna/toml": "^2.2.5",
 		"@netlify/functions": "^0.6.0",
 		"@netlify/plugin-nextjs": "^3.2.2-experimental-odb.1",
 		"@next/bundle-analyzer": "^10.1.2",
@@ -25,7 +26,7 @@
 		"babel-plugin-react-component-data-attribute": "^0.6.0",
 		"bowser": "^2.11.0",
 		"copy-webpack-plugin": "^6.4.1",
-		"directory-named-webpack-plugin": "4.0.1",
+		"directory-named-webpack-plugin": "^4.0.1",
 		"dotenv": "8.2.0",
 		"exif-js": "^2.3.0",
 		"file-type-es5": "^6.2.1",
@@ -39,8 +40,8 @@
 		"is-mobile": "^3.0.0",
 		"lodash.debounce": "4.0.8",
 		"lodash.throttle": "^4.1.1",
-		"next": "10.1.2",
-		"next-compose-plugins": "2.2.0",
+		"next": "^12.0.7",
+		"next-compose-plugins": "2.2.1",
 		"normalize.css": "8.0.1",
 		"project-wide-config": "file:../project-wide-config",
 		"react": "17.0.2",

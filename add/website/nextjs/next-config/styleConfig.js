@@ -1,4 +1,5 @@
-const breakpoints = require('../src/global/settings/breakpoints')
+const breakpoints = require('../local-config/breakpoints')
+
 const generateSassBreakpoint = () => {
 	let breakpointsString = '$breakpoints: ('
 	for (const breakpoint of breakpoints) {
@@ -14,8 +15,8 @@ const sassOptions = {
     @use 'sass:map';
     @use 'sass:list';
     @import '~rupture-sass/rupture';
-    @import '~/global/styles/settings.scss';
-    @import '~/global/styles/helpers.scss';
+    @import '~/styles/settings.scss';
+    @import '~/styles/helpers.scss';
     `
 }
 

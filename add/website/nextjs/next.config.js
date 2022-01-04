@@ -4,3 +4,4 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 const nextConfig = require('./next-config')
 module.exports = NextComposeWithPlugins([[withBundleAnalyzer]], nextConfig)
+
