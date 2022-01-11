@@ -1,7 +1,7 @@
 import CSS from './notSupported.module.scss'
 
 export const getStaticProps = async (props) => {
-	const DataInterface = require('~/data')
+	const DataInterface = require('data-interface')
 	const data = await DataInterface.fetch({ type: 'page', args: { name: 'notSupported' }})
 	return {
 		props: {
