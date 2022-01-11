@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { Transition, Footer, Header } from '~/components'
-import CSS from './default.module.scss'
+import CSS from './Default.module.scss'
 
 const Default = ({ children, data, i18n }) => {
 	const $element = useRef()
