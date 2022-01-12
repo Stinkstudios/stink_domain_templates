@@ -8,6 +8,11 @@ export default {
 			name: 'alt',
 			type: 'string',
 			description: 'Important for SEO and accessiblity.'
+		},
+		{
+			title: 'Image Attribution',
+			name: 'attribution',
+			type: 'string'
 		}
 	],
 	preview: {
