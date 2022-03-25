@@ -25,7 +25,7 @@
 		"axios": "^0.22.0",
 		"babel-plugin-react-component-data-attribute": "^0.6.0",
 		"bowser": "^2.11.0",
-		"copy-webpack-plugin": "^6.4.1",
+		"copy-webpack-plugin": "10.2.4",
 		"directory-named-webpack-plugin": "^4.0.1",
 		"dotenv": "8.2.0",
 		"exif-js": "^2.3.0",
